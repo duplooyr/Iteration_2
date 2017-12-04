@@ -54,7 +54,26 @@ def switch_words(sentence,word1,word2):
 def censor_words(sentence):
     n = 0
     new_sentence = ""
-    bad_words = ["cat","orange","vegetable","yellow"]
-    good_words = ["Dog", "Not Orange", "Fruit", "Not Yellow"]
-    for count in range(0,len(sentence):
-        if sentence[n] == bad_words[1,2,3,4]
+    bad_words = ["orange","yellow","vegetable"]
+    good_words = ["pink", "purple", "fruit"]
+    word_count = 0
+
+    for count in range(0,len(sentence)):
+        if sentence[n:n+len(bad_words[word_count])] == bad_words[word_count]:
+            new_sentence = new_sentence + good_words[word_count]
+
+            if word_count == 3:
+                word_count = 0
+            word_count += 1
+            n += 1
+
+        else:
+            new_sentence = new_sentence + sentence[n]
+
+            if word_count == 3:
+                word_count = 0
+            word_count += 1
+            n += 1
+            
+    return new_sentence
+        
