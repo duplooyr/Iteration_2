@@ -62,18 +62,17 @@ def censor_words(sentence):
         if sentence[n:n+len(bad_words[word_count])] == bad_words[word_count]:
             new_sentence = new_sentence + good_words[word_count]
 
-            if word_count == 3:
+            n = n + len(bad_words[word_count]) - 1
+            if word_count == 2:
                 word_count = 0
             word_count += 1
-            n += 1
+            
 
         else:
-            new_sentence = new_sentence + sentence[n]
+            new_sentence = new_sentence + sentence[n-30]
 
-            if word_count == 3:
+            if word_count == 2:
                 word_count = 0
-            word_count += 1
             n += 1
             
     return new_sentence
-        
