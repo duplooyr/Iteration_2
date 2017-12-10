@@ -56,23 +56,17 @@ def censor_words(sentence):
     new_sentence = ""
     bad_words = ["orange","yellow","vegetable"]
     good_words = ["pink", "purple", "fruit"]
-
-    for count in range(0,len(sentence)-18):
-        if sentence[n:n+len(bad_words[0])] == bad_words[0]:
-            new_sentence += good_words[0]
-            n += len(bad_words[0])
-
-        elif sentence[n:n+len(bad_words[1])] == bad_words[1]:
-            new_sentence += good_words[1]
-            n += len(bad_words[1])
-
-        elif sentence[n:n+len(bad_words[2])] == bad_words[2]:
-            new_sentence += good_words[2]
-            n += len(bad_words[2])
-
+    sentence_length = len(sentence)
+    word_number = 0
+    while n < sentence_length:
+        if sentence[n:n+len(bad_words[word_number])] == bad_words[word_number]:
+            new_sentence += good_words[word_number]
+            n += len(bad_words[word_number])
+            word_number += 1
+            if word_number == 3:
+                word_number = 0
         else:
             new_sentence += sentence[n]
             n += 1
-
     return new_sentence
 #////////////////////////////////////////////////////////////////////////////
