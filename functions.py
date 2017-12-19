@@ -51,11 +51,9 @@ def switch_words(sentence,word1,word2):
 
     return  new_sentence
 #////////////////////////////////////////////////////////////////////////////
-def censor_words(sentence):
+def censor_words(sentence, bad_words, good_words):
     n = 0
     new_sentence = ""
-    bad_words = ["orange","yellow","vegetable", "cool"]
-    good_words = ["pink", "purple", "fruit", "banana"]
     sentence_length = len(sentence)
     word_number = 0
 

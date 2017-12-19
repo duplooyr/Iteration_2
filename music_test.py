@@ -1,2 +1,2 @@
 from music import *
-print tranposeChords("A",1)
+print transpose_chords("A, E/G#",1)
